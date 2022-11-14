@@ -22,12 +22,9 @@ export default {
     callApi(url) {
       axios.get(url)
         .then(response => {
-          console.log(response);
-          // this.store.characters = response.data.results
-          // console.log(response.data[0].name);
-          // this.store.info = response.data.info
-          // console.log(response.data[0].img);
-          // console.log(response.data[0].status);
+          // console.log(response);
+          this.store.characters = response.data  //in questo modo characters diventa un array di oggetti contenente tutto cio di cui ho bisogno
+          // console.log(this.store.characters);
         })
         .catch(err => {
           console.error(err.message);
@@ -37,7 +34,6 @@ export default {
   },
   mounted() {
     this.callApi(this.store.API_URL)
-    // console.log(this.store.characters)
   }
 }
 

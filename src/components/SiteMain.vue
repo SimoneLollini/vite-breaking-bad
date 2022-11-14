@@ -1,11 +1,18 @@
 <script>
+import CharacterList from "./CharactersList.vue";
+
 export default {
-    name: 'SiteMain'
+    name: 'SiteMain',
+    components: {
+        CharacterList,
+    }
 }
 </script>
 
 <template>
-    <main></main>
+    <main>
+        <CharacterList />
+    </main>
 </template>
 
 <style lang="scss">
