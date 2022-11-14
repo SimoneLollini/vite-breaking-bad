@@ -5,9 +5,14 @@ export default {
 </script>
 
 <template>
-    <header></header>
+    <header>
+        <h1 class="text-white px-3 py-5">Breaking Bad API</h1>
+    </header>
 </template>
 
 <style lang="scss">
+header {
+    background-color: #2E3A46;
 
+}
 </style>
