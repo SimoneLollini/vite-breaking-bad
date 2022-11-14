@@ -22,10 +22,12 @@ export default {
     callApi(url) {
       axios.get(url)
         .then(response => {
-          // console.log(response);
-          this.store.characters = response.data.name
-          this.store.image = response.data.img
-          this.store.status = response.data.status
+          console.log(response);
+          // this.store.characters = response.data.results
+          // console.log(response.data[0].name);
+          // this.store.info = response.data.info
+          // console.log(response.data[0].img);
+          // console.log(response.data[0].status);
         })
         .catch(err => {
           console.error(err.message);
@@ -35,7 +37,7 @@ export default {
   },
   mounted() {
     this.callApi(this.store.API_URL)
-    console.log(this.store)
+    // console.log(this.store.characters)
   }
 }
 
