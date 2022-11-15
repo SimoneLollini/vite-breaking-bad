@@ -23,7 +23,7 @@ export default {
     callApi(url) {
       axios.get(url)
         .then(response => {
-          console.log(response);
+          // console.log(response);
           this.store.characters = response.data
           //in questo modo characters diventa un array di oggetti contenente tutto cio di cui ho bisogno
           this.store.loading = true;

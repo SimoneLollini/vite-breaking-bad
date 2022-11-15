@@ -6,7 +6,8 @@ export const store = reactive({
     loading: false,
     image: null,
     status: null,
-    error: null
+    error: null,
+    SelectedCategory: '',
 })
 
 
