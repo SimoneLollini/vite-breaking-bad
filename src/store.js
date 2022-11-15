@@ -3,6 +3,7 @@ import { reactive } from "vue";
 export const store = reactive({
     API_URL: 'https://www.breakingbadapi.com/api/characters',
     characters: null,
+    loading: false,
     image: null,
     status: null,
     error: null

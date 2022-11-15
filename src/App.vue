@@ -26,7 +26,7 @@ export default {
           console.log(response);
           this.store.characters = response.data
           //in questo modo characters diventa un array di oggetti contenente tutto cio di cui ho bisogno
-          this.loading = true;
+          this.store.loading = true;
           // console.log(this.store.characters);
         })
         .catch(err => {

@@ -28,7 +28,7 @@ export default {
     </div>
     <div class="container">
 
-        <div class="row row-cols-5 gy-4" v-if="!this.store.loading">
+        <div class="row row-cols-5 gy-4" v-if="this.store.loading">
             <CharacterLi :character="character" v-for="character in store.characters" />
         </div>
         <div v-else class="loading">

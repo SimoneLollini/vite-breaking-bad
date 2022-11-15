@@ -6,7 +6,15 @@ export default {
 
 <template>
     <header>
-        <h1 class="text-white px-3 py-5">Breaking Bad API</h1>
+        <div class="container py-5">
+            <h1 class="text-white py-3">Breaking Bad API</h1>
+            <select v-model="CategorySelected" @change="$emit('SearchByCategory')">
+                <option value="Select_category">Select category</option>
+                <option value="Breaking_Bad">Breaking Bad</option>
+                <option value="Better_Call_Saul">Better Call Saul</option>
+            </select>
+        </div>
+
     </header>
 </template>
 
