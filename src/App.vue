@@ -12,6 +12,7 @@ export default {
     SiteHeader,
     SiteMain,
     SiteFooter,
+    loading: false,
   },
   data() {
     return {
@@ -22,8 +23,10 @@ export default {
     callApi(url) {
       axios.get(url)
         .then(response => {
-          // console.log(response);
-          this.store.characters = response.data  //in questo modo characters diventa un array di oggetti contenente tutto cio di cui ho bisogno
+          console.log(response);
+          this.store.characters = response.data
+          //in questo modo characters diventa un array di oggetti contenente tutto cio di cui ho bisogno
+          this.loading = true;
           // console.log(this.store.characters);
         })
         .catch(err => {
@@ -41,7 +44,7 @@ export default {
 
 </script>
 
-<template>
+<template >
   <SiteHeader />
   <SiteMain />
   <SiteFooter />
