@@ -1,6 +1,7 @@
 <script>
 import { store } from "../store.js"; //mi servirà successivamente per cambiare l'url di partenza
 import SelectBox from "./SelectBox.vue";
+import axios from 'axios';
 export default {
     name: 'SiteHeader',
     components: {
@@ -13,7 +14,20 @@ export default {
         }
     }, methods: {
         SearchByCategory() {
-            console.log('hai cambiato categoria');
+            // console.log('hai cambiato categoria');
+            // console.log(store.SelectedCategory);
+
+            const url = `${this.store.API_URL}?category=${store.SelectedCategory}`
+            console.log(url);
+
+            axios.get(url)
+                .then(response => {
+                    console.log(response)
+                    this.store.characters = response.data
+                })
+                .catch(err => {
+                    console.log(err);
+                })
         }
     }
 }
@@ -21,7 +35,7 @@ export default {
 
 <template>
     <header>
-        <SelectBox />
+        <SelectBox @SearchBy="SearchByCategory" />
 
     </header>
 </template>

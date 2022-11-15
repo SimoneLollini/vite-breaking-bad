@@ -1,7 +1,7 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    API_URL: 'https://www.breakingbadapi.com/api/characters',
+    API_URL: `https://www.breakingbadapi.com/api/characters`,  //?category=Better+Call+Saul      ?category=Breaking+Bad 
     characters: null,
     loading: false,
     image: null,
