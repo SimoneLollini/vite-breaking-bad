@@ -18,16 +18,9 @@ export default {
             // console.log(store.SelectedCategory);
 
             const url = `${this.store.API_URL}?category=${store.SelectedCategory}`
-            console.log(url);
+            // console.log(url);
+            store.callApi(url)
 
-            axios.get(url)
-                .then(response => {
-                    console.log(response)
-                    this.store.characters = response.data
-                })
-                .catch(err => {
-                    console.log(err);
-                })
         }
     }
 }
